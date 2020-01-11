@@ -4,12 +4,13 @@ public class FizzBuzz {
     public String execute(int number) {
         String numberAsStr = String.valueOf(number);
         String result = beDivideByThreeRule(number) + beDivideByFiveRule(number) + beDivideBySevenRule(number);
-        if (numberAsStr.contains("5")) {
-            result = result.replace("Fizz", "");
+        if(numberAsStr.contains("7")) {
+          result = containsSevenRule(number);
+        } else if (numberAsStr.contains("5")) {
+            result = containsFiveRule(number);
         } else if (numberAsStr.contains("3")) {
-            result = "Fizz";
+            result = containsThreeRule();
         }
-
         return result.equals("") ? numberAsStr : result;
     }
 
@@ -27,5 +28,18 @@ public class FizzBuzz {
 
     private String beDivideBySevenRule(int number) {
         return beDivideBy(number, 7) ? "Whizz" : "";
+    }
+
+    private String containsThreeRule() {
+        return "Fizz";
+    }
+
+    private String containsFiveRule(int number) {
+        return  beDivideByFiveRule(number) + beDivideBySevenRule(number);
+    }
+
+    private String containsSevenRule(int number) {
+        return String.valueOf(number).contains("3") ?
+                containsThreeRule() : beDivideByThreeRule(number) + beDivideBySevenRule(number);
     }
 }
