@@ -46,12 +46,20 @@ public class FizzBuzzTEST {
         assertThat(fizzBuzz.execute(90), is("FizzBuzz"));
     }
 
-
     @Test
     public void shouldReturnFizzWhizzWhenNumberCouldBeDivideBy3And7() {
         FizzBuzz fizzBuzz = new FizzBuzz();
 
         assertThat(fizzBuzz.execute(21), is("FizzWhizz"));
         assertThat(fizzBuzz.execute(42), is("FizzWhizz"));
+    }
+
+    @Test
+    public void shouldReturnFizzWhenNumberContains3() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.execute(13), is("Fizz"));
+        assertThat(fizzBuzz.execute(30), is("Fizz"));
+        assertThat(fizzBuzz.execute(630), is("Fizz"));
     }
 }

@@ -2,8 +2,12 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String execute(int number) {
+        String numberAsStr = String.valueOf(number);
+        if (numberAsStr.contains("3")) {
+           return "Fizz";
+        }
         String result = beDivideByThreeRule(number) + beDivideByFiveRule(number) + beDivideBySevenRule(number);
-        return result.equals("") ? String.valueOf(number) : result;
+        return result.equals("") ? numberAsStr : result;
     }
 
     private boolean beDivideBy(int number, int divisor) {
