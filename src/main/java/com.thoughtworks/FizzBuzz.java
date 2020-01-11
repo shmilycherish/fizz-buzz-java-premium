@@ -2,23 +2,23 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String execute(int number) {
-        String result = "";
-        if (beDivideBy(number, 3)) {
-            result += "Fizz";
-        }
-
-        if (beDivideBy(number, 5)) {
-            result += "Buzz";
-        }
-
-        if (beDivideBy(number, 7)) {
-            result += "Whizz";
-        }
-
+        String result = beDivideByThreeRule(number) + beDivideByFiveRule(number) + beDivideBySevenRule(number);
         return result.equals("") ? String.valueOf(number) : result;
     }
 
     private boolean beDivideBy(int number, int divisor) {
         return number % divisor == 0;
+    }
+
+    private String beDivideByThreeRule(int number) {
+        return beDivideBy(number, 3) ? "Fizz" : "";
+    }
+
+    private String beDivideByFiveRule(int number) {
+        return beDivideBy(number, 5) ? "Buzz" : "";
+    }
+
+    private String beDivideBySevenRule(int number) {
+        return beDivideBy(number, 7) ? "Whizz" : "";
     }
 }
