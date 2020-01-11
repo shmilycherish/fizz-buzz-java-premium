@@ -5,7 +5,12 @@ public class FizzBuzz {
         if (beDivideBy(number, 3)) {
             return "Fizz";
         }
-        return beDivideBy(number, 5) ? "Buzz" : String.valueOf(number);
+
+        if (beDivideBy(number, 5)) {
+            return "Buzz";
+        }
+
+        return beDivideBy(number, 7) ? "Whizz" : String.valueOf(number);
     }
 
     private boolean beDivideBy(int number, int divisor) {

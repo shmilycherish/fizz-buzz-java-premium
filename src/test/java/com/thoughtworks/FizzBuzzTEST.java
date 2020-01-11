@@ -29,4 +29,12 @@ public class FizzBuzzTEST {
         assertThat(fizzBuzz.execute(5), is("Buzz"));
         assertThat(fizzBuzz.execute(20), is("Buzz"));
     }
+
+    @Test
+    public void shouldReturnWhizzWhenNumberCouldBeDivideBy7() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.execute(7), is("Whizz"));
+        assertThat(fizzBuzz.execute(14), is("Whizz"));
+    }
 }
