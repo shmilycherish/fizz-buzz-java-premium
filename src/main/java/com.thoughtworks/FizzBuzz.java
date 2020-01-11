@@ -2,15 +2,20 @@ package com.thoughtworks;
 
 public class FizzBuzz {
     public String execute(int number) {
+        String result = "";
         if (beDivideBy(number, 3)) {
-            return "Fizz";
+            result += "Fizz";
         }
 
         if (beDivideBy(number, 5)) {
-            return "Buzz";
+            result += "Buzz";
         }
 
-        return beDivideBy(number, 7) ? "Whizz" : String.valueOf(number);
+        if (beDivideBy(number, 7)) {
+            result += "Whizz";
+        }
+
+        return result.equals("") ? String.valueOf(number) : result;
     }
 
     private boolean beDivideBy(int number, int divisor) {

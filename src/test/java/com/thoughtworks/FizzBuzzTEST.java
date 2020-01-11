@@ -37,4 +37,21 @@ public class FizzBuzzTEST {
         assertThat(fizzBuzz.execute(7), is("Whizz"));
         assertThat(fizzBuzz.execute(14), is("Whizz"));
     }
+
+    @Test
+    public void shouldReturnFizzBuzzWhenNumberCouldBeDivideBy3And5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.execute(60), is("FizzBuzz"));
+        assertThat(fizzBuzz.execute(90), is("FizzBuzz"));
+    }
+
+
+    @Test
+    public void shouldReturnFizzWhizzWhenNumberCouldBeDivideBy3And7() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.execute(21), is("FizzWhizz"));
+        assertThat(fizzBuzz.execute(42), is("FizzWhizz"));
+    }
 }
