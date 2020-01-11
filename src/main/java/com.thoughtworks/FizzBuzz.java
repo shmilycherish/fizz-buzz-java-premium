@@ -3,10 +3,13 @@ package com.thoughtworks;
 public class FizzBuzz {
     public String execute(int number) {
         String numberAsStr = String.valueOf(number);
-        if (numberAsStr.contains("3")) {
-           return "Fizz";
-        }
         String result = beDivideByThreeRule(number) + beDivideByFiveRule(number) + beDivideBySevenRule(number);
+        if (numberAsStr.contains("5")) {
+            result = result.replace("Fizz", "");
+        } else if (numberAsStr.contains("3")) {
+            result = "Fizz";
+        }
+
         return result.equals("") ? numberAsStr : result;
     }
 

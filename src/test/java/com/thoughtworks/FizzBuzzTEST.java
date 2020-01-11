@@ -62,4 +62,13 @@ public class FizzBuzzTEST {
         assertThat(fizzBuzz.execute(30), is("Fizz"));
         assertThat(fizzBuzz.execute(630), is("Fizz"));
     }
+
+    @Test
+    public void shouldResultNotContainsFizzReturnWhenNumberContains5() {
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        assertThat(fizzBuzz.execute(35), is("BuzzWhizz"));
+        assertThat(fizzBuzz.execute(3150), is("BuzzWhizz"));
+        assertThat(fizzBuzz.execute(75), is("Buzz"));
+    }
 }
